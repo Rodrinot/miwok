@@ -15,7 +15,11 @@
  */
 package com.example.android.miwok;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,5 +31,44 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+
+        // Find category views.
+        TextView numbers = findViewById(R.id.numbers);
+        TextView family = findViewById(R.id.family);
+        TextView colors = findViewById(R.id.colors);
+        final TextView phrases = findViewById(R.id.phrases);
+
+        // Set ClickListeners.
+        numbers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), NumbersActivity.class);
+                startActivity(i);
+            }
+        });
+
+        family.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), FamilyActivity.class);
+                startActivity(i);
+            }
+        });
+
+        colors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), ColorsActivity.class);
+                startActivity(i);
+            }
+        });
+
+        phrases.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), PhrasesActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }
