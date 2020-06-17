@@ -2,10 +2,15 @@ package com.example.android.miwok;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+
+import static com.example.android.miwok.R.color.category_colors;
+import static com.example.android.miwok.R.color.category_phrases;
 
 public class ColorsActivity extends AppCompatActivity {
 
@@ -27,7 +32,7 @@ public class ColorsActivity extends AppCompatActivity {
 
         // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
         // adapter knows how to create list items for each item in the list.
-        WordAdapter adapter = new WordAdapter(this, words);
+        WordAdapter adapter = new WordAdapter(this, words, category_colors);
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
